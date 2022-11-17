@@ -1,0 +1,11 @@
+metadataVersion: 1
+extensions:
+  - name: OIS100_PACHK_PRE
+    triggers:
+      - type: METHOD
+        program: OIS100
+        programType: INTERACTIVE
+        method: PACHK
+        advice: PRE
+    priority: 500
+    utilities: 
