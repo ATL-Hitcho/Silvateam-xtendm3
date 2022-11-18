@@ -48,7 +48,6 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
       }
 
       // Check order type
-      
       String DSP_OAORTP = interactive.display.fields.OAORTP
       if (!orderTypeExists(program, database, DSP_OAORTP)) {
         //   MSGID=WOT9003 Order type &1 does not exist
