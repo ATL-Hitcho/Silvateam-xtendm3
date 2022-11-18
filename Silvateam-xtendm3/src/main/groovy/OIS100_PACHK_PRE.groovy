@@ -19,6 +19,7 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
 	this.program = program
 	this.interactive = interactive
 	this.database = database
+
   }
 
   public void main() {
