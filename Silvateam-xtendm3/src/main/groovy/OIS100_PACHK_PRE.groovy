@@ -60,6 +60,13 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
     }
   }
 
+  /**
+   *    customerExists - checks if the customer exists in the table OCUSMA
+   *    @param cuno - customer number
+   *    @return true if the customer exists
+   *    @return cf4c User-def fld 4
+   *    
+   */
   public boolean customerExists(ProgramAPI program, DatabaseAPI database, String cuno) {
     DBAction readOCUSMA00 = database.table("OCUSMA").index("00").selection("OKCONO", "OKCUNO", "OKCFC4").build()
     DBContainer containerOCUSMA00 = readOCUSMA00.getContainer()
@@ -72,6 +79,12 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
     return false
   }
 
+  /**
+   *    orderTypeExists - checks if the order type exists in the table OOTYPE
+   *    @param ortp - order type
+   *    @return true if the order type exists
+   *    
+   */
   public boolean orderTypeExists(ProgramAPI program, DatabaseAPI database, String ortp) {
     DBAction readOOTYPE00 = database.table("OOTYPE").index("00").selection("OOCONO", "OOORTP").build()
     DBContainer containerOOTYPE00 = readOOTYPE00.getContainer()
@@ -83,6 +96,13 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
     return false
   }
 
+  /**
+   *    orderTypeGroupExists - checks if the order type group exists in the table OGOTYG
+   *    @param otyg - order type group
+   *    @param ortp - order type
+   *    @return true if the order type group exists
+   *    
+   */
   public boolean orderTypeGroupExists(ProgramAPI program, DatabaseAPI database, String otyg, String ortp) {
     DBAction readOOTYPG00 = database.table("OOTYPG").index("00").selection("OGCONO", "OGOTYG", "OGORTP").build()
     DBContainer containerOOTYPG00 = readOOTYPG00.getContainer()
@@ -95,6 +115,15 @@ public class OIS100_PACHK_PRE extends ExtendM3Trigger {
     return false
   }
 
+  /**
+   *    addressTypeExists - checks if the address exists in the table OCUSAD
+   *    @param cuno - customer number
+   *    @param adrt - address type
+   *    @param adid - address number
+   *    @return true if the address exists
+   *    @return SPLC code
+   *    
+   */
   public boolean addressTypeExists(ProgramAPI program, DatabaseAPI database, String cuno, int adrt, String adid) {
     DBAction readOCUSAD00 = database.table("OCUSAD").index("00").selection("OPCONO", "OPCUNO", "OPADRT", "OPADID", "OPSPLE").build()
     DBContainer containerOCUSAD00 = readOCUSAD00.getContainer()
